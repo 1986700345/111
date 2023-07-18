@@ -19,6 +19,11 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   return {
     base: viteEnv.VITE_PUBLIC_PATH,
     root,
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "./src"),
+      }
+    },
     esbuild: {
       pure: viteEnv.VITE_DROP_CONSOLE ? ["console.log", "debugger"] : []
     },

@@ -1,21 +1,26 @@
-<script setup lang="ts">
-
-</script>
 <template>
-    <div class="login-container">
-        <div class="login-box d-flex">
-            <div class="box-left">
-                <el-image style="width: 100%;" src="/src/assets/images/login_left.png" fit="contain" />
-            </div>
-            <div class="box-right">
-                <div class="d-flex">
-                    <el-image style="width: 60px;height: 52px;" src="/src/assets/images/logo.svg" fit="contain" />
-                    <div class="font-style">Geeker-Admin</div>
-                </div>
-            </div>
+  <div class="login-container flx-center">
+    <div class="login-box">
+      <SwitchDark class="dark" />
+      <div class="login-left">
+        <img class="login-left-img" src="@/assets/images/login_left.png" alt="login" />
+      </div>
+      <div class="login-form">
+        <div class="login-logo">
+          <img class="login-icon" src="@/assets/images/logo.svg" alt="" />
+          <h2 class="logo-text">Geeker-Admin</h2>
         </div>
+        <LoginForm />
+      </div>
     </div>
+  </div>
 </template>
-<style scoped>
 
+<script setup lang="ts" name="login">
+import LoginForm from "./components/LoginForm.vue";
+import SwitchDark from "@/components/SwitchDark/index.vue";
+</script>
+
+<style scoped lang="scss">
+@import "./index.scss";
 </style>
